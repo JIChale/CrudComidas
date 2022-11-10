@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Comidas</title>
+</head>
+<body>
+	Gestion de comida
+	
+	<a th:href="@{/operacionesComida/alta}">Alta</a>
+	
+	<table border="1">
+		<thead>
+			<tr>				
+				<th>Id</th>
+				<th>Nombre</th>
+				<th>Region</th>
+				<th>Precio</th>	
+				<th>Eliminar</th>		
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="l: ${lista}">
+				<td th:text="${l.id}">Id</td>
+				<td th:text="${l.nombre}">Nombre</td>
+				<td th:text="${l.region}">Region</td>
+				<td th:text="${l.precio}">Precio</td>
+				<td><a th:href="@{/operacionesComida/borrar/} + ${l.id}" th:text="Eliminar"></a></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

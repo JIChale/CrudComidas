@@ -16,7 +16,8 @@
 				<th>Nombre</th>
 				<th>Region</th>
 				<th>Precio</th>	
-				<th>Eliminar</th>		
+				<th>Eliminar</th>
+				<th>Editar</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -26,6 +27,7 @@
 				<td th:text="${l.region}">Region</td>
 				<td th:text="${l.precio}">Precio</td>
 				<td><a th:href="@{/operacionesComida/borrar/} + ${l.id}" th:text="Eliminar"></a></td>
+				<td><a th:href="@{/operacionesComida/actualizar/} + ${l.id}" th:text="Editar"></a></td>
 			</tr>
 		</tbody>
 	</table>

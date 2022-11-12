@@ -56,4 +56,18 @@ public class comidaCtrl {
 		comidaServ.eliminar(comida); 
     	return "redirect:/operacionesComida/inicio";
     }
+	
+	@GetMapping("/actualizar/{id}")
+	public String actualizar(Comida comida, Model model) {
+		comida=comidaServ.buscar(comida);
+		model.addAttribute("comida", comida);
+		return "modificar";
+	}
+	
+	@PostMapping("/editar")
+    public String editar(Comida comida) {
+    	
+		comidaServ.editar(comida); 
+    	return "redirect:/operacionesComida/inicio";
+    }
 }
